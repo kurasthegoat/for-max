@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Kaelyn 💗</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Sacramento&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,35 +17,28 @@ box-sizing:border-box;
 
 body{
 
-background:linear-gradient(180deg,#ffd6e7,#ffe9f3,#fff5fa);
-
-font-family:'Quicksand',sans-serif;
-
+font-family:Poppins,sans-serif;
 overflow:hidden;
-
-height:100vh;
+background:linear-gradient(180deg,#ffd7eb,#fff4fb);
 
 }
 
 .page{
 
-position:absolute;
-
-width:100%;
-
-height:100%;
-
 display:none;
+width:100vw;
+height:100vh;
 
 justify-content:center;
-
 align-items:center;
-
 flex-direction:column;
 
+padding:30px;
 text-align:center;
 
-padding:30px;
+position:absolute;
+left:0;
+top:0;
 
 animation:fade .8s;
 
@@ -57,29 +50,38 @@ display:flex;
 
 }
 
-.card{
+@keyframes fade{
 
-background:white;
+from{
 
-width:90%;
+opacity:0;
+transform:scale(.95);
 
-max-width:650px;
+}
 
-padding:35px;
+to{
 
-border-radius:30px;
+opacity:1;
+transform:scale(1);
 
-box-shadow:0 10px 30px rgba(255,105,180,.25);
+}
 
 }
 
 h1{
 
-font-family:'Pacifico',cursive;
+font-family:Sacramento,cursive;
+font-size:75px;
+color:#ff4f94;
 
-color:#ff4f9c;
+margin-bottom:15px;
 
-font-size:3rem;
+}
+
+h2{
+
+font-size:42px;
+color:#ff5f9c;
 
 margin-bottom:20px;
 
@@ -87,7 +89,9 @@ margin-bottom:20px;
 
 p{
 
-font-size:1.2rem;
+max-width:700px;
+
+font-size:20px;
 
 line-height:1.8;
 
@@ -97,235 +101,411 @@ color:#555;
 
 button{
 
-margin-top:30px;
+margin-top:40px;
 
-padding:15px 35px;
+padding:15px 45px;
 
 border:none;
 
-border-radius:999px;
+border-radius:50px;
 
-background:#ff69b4;
-
-color:white;
-
-font-size:18px;
+font-size:20px;
 
 cursor:pointer;
 
+background:#ff5c9d;
+
+color:white;
+
 transition:.3s;
+
+box-shadow:0 10px 30px rgba(255,90,160,.35);
 
 }
 
 button:hover{
 
-transform:scale(1.08);
-
-background:#ff4f9c;
+transform:translateY(-4px) scale(1.05);
 
 }
 
-@keyframes fade{
+.loading{
 
-from{
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:#ffd3e8;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:999;
+
+transition:1s;
+
+}
+
+.loader{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+border:10px solid white;
+
+border-top-color:#ff5c9d;
+
+animation:spin 1s linear infinite;
+
+margin-bottom:30px;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.floating{
+
+position:fixed;
+
+top:-30px;
+
+pointer-events:none;
+
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-10vh) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(360deg);
 
 opacity:0;
 
-transform:translateY(30px);
+}
 
 }
 
-to{```html
+.songCard{
+
+background:white;
+
+padding:40px;
+
+border-radius:30px;
+
+box-shadow:0 20px 60px rgba(255,120,180,.25);
+
+max-width:700px;
+
+}
+
+.songBtn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+background:#ff5c9d;
+
+color:white;
+
+text-decoration:none;
+
+font-size:20px;
+
+}
+
+.typewriter{
+
+font-size:40px;
+
+color:#ff4f94;
+
+max-width:900px;
+
+line-height:1.5;
+
+min-height:170px;
+
+}
+
+.answerButtons{
+
+display:none;
+
+margin-top:50px;
+
+}
+
+.answerButtons button{
+
+margin:15px;
+
+}
+
+.result{
+
+font-size:34px;
+
+color:#ff4f94;
+
+max-width:900px;
+
+line-height:1.6;
+
+}
+
+.sparkle{
+
+position:fixed;
+
+pointer-events:none;
+
+animation:spark 2s linear infinite;
+
+}
+
+@keyframes spark{
+
+0%{
+
+opacity:0;
+
+transform:scale(.4);
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(1.6);
+
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<div id="hearts"></div>
+<div class="loading" id="loading">
 
-<div class="page active" id="loading">
-    <div class="card">
-        <h1>💗</h1>
-        <p>Loading something made especially for Kaelyn...</p>
-    </div>
-</div>
+<div class="loader"></div>
 
-<div class="page" id="page1">
-    <div class="card">
-        <h1>Hi Kaelyn! ✨</h1>
-        <p>I made something just for you.</p>
-        <button onclick="nextPage(1)">💗 Continue</button>
-    </div>
-</div>
-
-<div class="page" id="page2">
-    <div class="card">
-        <h1>💌</h1>
-        <p>
-            I wasn't really sure how to say all of this...
-            <br><br>
-            So I made you this little website instead.
-        </p>
-
-        <button onclick="nextPage(2)">💗 Continue</button>
-    </div>
-</div>
-
-<div class="page" id="page3">
-    <div class="card">
-        <h1>🎵 Our Song</h1>
-
-        <p>
-            Meet Me At Our Spot
-            <br><br>
-            Every time I hear it, I think of you.
-        </p>
-
-        <a
-        href="https://www.youtube.com/results?search_query=Meet+Me+At+Our+Spot"
-        target="_blank">
-
-        <button>▶ Play Our Song</button>
-
-        </a>
-
-        <br>
-
-        <button onclick="nextPage(3)">
-        💗 Continue
-        </button>
-
-    </div>
-</div>
-```
-
-opacity:1;
-
-transform:none;
-
-}
-
-}
-
-.heart{
-
-position:absolute;
-
-bottom:-30px;
-
-font-size:22px;
-
-animation:floatUp linear infinite;
-
-opacity:.7;
-
-}
-
-@keyframes floatUp{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(-120vh);
-
-}
-
-}
-
-</style><div class="page" id="page4">
-    <div class="card">
-        <h1>🌷</h1>
-
-        <p>
-            There are a few things I really like about you...
-            <br><br>
-
-            🌸 Your smile
-            <br><br>
-
-            ✨ Your personality
-            <br><br>
-
-            💖 The way you make me laugh
-            <br><br>
-
-            🌷 Just being around you.
-        </p>
-
-        <button onclick="nextPage(4)">💗 Continue</button>
-
-    </div>
-</div>
-
-<div class="page" id="page5">
-
-    <div class="card">
-
-        <h1>💌</h1>
-
-        <p>
-
-            Every conversation with you became something I looked forward to.
-
-            <br><br>
-
-            I wanted to make something you'd hopefully always remember.
-
-            <br><br>
-
-            Thank you for simply being you.
-
-        </p>
-
-        <button onclick="nextPage(5)">💗 Continue</button>
-
-    </div>
+<h2>Loading something special... 💗</h2>
 
 </div>
 
-<div class="page" id="page6">
+<div id="pages">
 
-    <div class="card">
+<div class="page active">
 
-        <h1 id="typing"></h1>
+<h1>Hi Kaelyn 🌸</h1>
 
-        <p id="question"></p>
+<p>
 
-        <div id="choices" style="display:none; margin-top:25px;">
+I made this little website because there were a few things I wanted to tell you...
 
-            <button onclick="yesAnswer()">🩷 Yes</button>
+</p>
 
-            <button onclick="noAnswer()">🤍 No</button>
+<button onclick="nextPage()">
 
-        </div>
+Continue 💗
 
-        <div id="result" style="margin-top:30px;font-size:24px;color:#ff4f9c;font-weight:bold;"></div>
+</button>
 
-    </div>
+</div>
+
+<div class="page">
+
+<h2>Every little moment with you...</h2>
+
+<p>
+
+Makes my day brighter.
+
+Even the smallest conversations can make me smile for hours.
+
+</p>
+
+<button onclick="nextPage()">
+
+Continue 💗
+
+</button>
+
+</div>
+
+<div class="page">
+
+<h2>You make life feel different ✨</h2>
+
+<p>
+
+You're kind.
+
+You're beautiful.
+
+You're funny.
+
+You're someone I genuinely enjoy talking to.
+
+And I wanted you to know that.
+
+</p>
+
+<button onclick="nextPage()">
+
+Continue 💗
+
+</button>
+
+</div>
+
+<div class="page">
+
+<div class="songCard">
+
+<h2>🎵 Our Song 🎵</h2>
+
+<p>
+
+Meet Me At Our Spot
+
+</p>
+
+<a
+class="songBtn"
+href="https://www.youtube.com/results?search_query=Meet+Me+At+Our+Spot"
+target="_blank">
+
+Play Song 💕
+
+</a>
+
+<br>
+
+<button onclick="nextPage()">
+
+Continue 💗
+
+</button>
+
+</div>
+
+</div><div class="page">
+
+<h2>💗 Before you continue... 💗</h2>
+
+<p>
+
+Every page before this was just leading up to one thing.
+
+Something I've wanted to ask you for a while.
+
+</p>
+
+<button onclick="nextPage()">
+
+Continue 💗
+
+</button>
+
+</div>
+
+<div class="page">
+
+<h2>🌸 One Last Thing 🌸</h2>
+
+<div id="typewriter" class="typewriter"></div>
+
+<div class="answerButtons" id="answerButtons">
+
+<button onclick="yesAnswer()">
+
+Yes 💗
+
+</button>
+
+<button onclick="noAnswer()">
+
+No
+
+</button>
+
+</div>
+
+</div>
+
+<div class="page">
+
+<div id="finalMessage" class="result"></div>
+
+</div>
 
 </div>
 
 <script>
 
-let current = 0;
+const pages=document.querySelectorAll(".page");
 
-const pages = document.querySelectorAll(".page");
+let current=0;
 
-setTimeout(() => {
+setTimeout(()=>{
 
-pages[0].classList.remove("active");
+document.getElementById("loading").style.opacity="0";
 
-pages[1].classList.add("active");
+setTimeout(()=>{
 
-current = 1;
+document.getElementById("loading").style.display="none";
 
-},2000);
+},1000);
 
-function nextPage(num){
+},2500);
+
+function nextPage(){
 
 pages[current].classList.remove("active");
 
@@ -333,97 +513,119 @@ current++;
 
 pages[current].classList.add("active");
 
-if(current==6){
+if(current===5){
 
-startProposal();
-
-}
+typeWriter();
 
 }
 
-function startProposal(){
+}
 
-const title=document.getElementById("typing");
+const message="Kaelyn... Will you make me the happiest man and let me be your boyfriend? 💗";
 
-const question=document.getElementById("question");
+let index=0;
 
-title.innerHTML="Kaelyn...";
+function typeWriter(){
 
-setTimeout(()=>{
-
-const text="Will you make me the happiest man and let me be your boyfriend? 💗";
-
-let i=0;
+const target=document.getElementById("typewriter");
 
 const timer=setInterval(()=>{
 
-question.innerHTML=text.substring(0,i);
+target.innerHTML+=message.charAt(index);
 
-i++;
+index++;
 
-if(i>text.length){
+if(index>=message.length){
 
 clearInterval(timer);
 
-document.getElementById("choices").style.display="block";
+document.getElementById("answerButtons").style.display="block";
 
 }
 
-},50);
+},55);
 
-},2000);
+}
 
-}function yesAnswer(){
+function yesAnswer(){
 
-document.getElementById("choices").style.display="none";
+pages[current].classList.remove("active");
 
-document.getElementById("result").innerHTML=
+current++;
+
+pages[current].classList.add("active");
+
+document.getElementById("finalMessage").innerHTML=
+
 "💗 You just made me the happiest man alive. 💗";
-
-for(let i=0;i<120;i++){
-
-const heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML=Math.random()>.5?"💗":"🌸";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.animationDuration=(4+Math.random()*5)+"s";
-
-document.body.appendChild(heart);
-
-}
 
 }
 
 function noAnswer(){
 
-document.getElementById("choices").style.display="none";
+pages[current].classList.remove("active");
 
-document.getElementById("result").innerHTML=
+current++;
+
+pages[current].classList.add("active");
+
+document.getElementById("finalMessage").innerHTML=
+
 "💗 It's okay, I still like you! Thank you for taking the time to read this. 💗";
 
 }
 
-for(let i=0;i<40;i++){
+function createHeart(){
 
-const h=document.createElement("div");
+const heart=document.createElement("div");
 
-h.className="heart";
+heart.className="floating";
 
-h.innerHTML=Math.random()>.5?"💗":"✨";
+heart.innerHTML=Math.random()>.5?"💗":"🌸";
 
-h.style.left=Math.random()*100+"vw";
+heart.style.left=Math.random()*100+"vw";
 
-h.style.animationDuration=(8+Math.random()*6)+"s";
+heart.style.fontSize=(20+Math.random()*25)+"px";
 
-h.style.animationDelay=Math.random()*6+"s";
+heart.style.animationDuration=(6+Math.random()*6)+"s";
 
-document.body.appendChild(h);
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},12000);
 
 }
+
+setInterval(createHeart,250);
+
+function sparkle(){
+
+const s=document.createElement("div");
+
+s.className="sparkle";
+
+s.innerHTML="✨";
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top=Math.random()*100+"vh";
+
+s.style.fontSize=(15+Math.random()*20)+"px";
+
+document.body.appendChild(s);
+
+setTimeout(()=>{
+
+s.remove();
+
+},2000);
+
+}
+
+setInterval(sparkle,350);
 
 </script>
 
